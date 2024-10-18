@@ -5,6 +5,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import DefaultLayout from "../components/DefaultLayout";
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 const ItemPage = () => {
   const dispatch = useDispatch();
   const [itemsData, setItemsData] = useState([]);
@@ -15,7 +17,7 @@ const ItemPage = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      const { data } = await axios.get("/api/items/get-item");
+      const { data } = await axios.get(`${apiUrl}/api/items/get-item`);
       setItemsData(data);
       dispatch({ type: "HIDE_LOADING" });
       console.log(data);
@@ -36,7 +38,7 @@ const ItemPage = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      await axios.post("/api/items/delete-item", { itemId: record._id });
+      await axios.post(`${apiUrl}/items/delete-item`, { itemId: record._id });
       message.success("Item Deleted Succesfully");
       getAllItems();
       setPopupModal(false);
@@ -90,7 +92,7 @@ const ItemPage = () => {
         dispatch({
           type: "SHOW_LOADING",
         });
-        await axios.post("/api/items/add-item", value);
+        await axios.post(`${apiUrl}/items/add-item`, value);
         message.success("Item Added Succesfully");
         getAllItems();
         setPopupModal(false);
@@ -105,7 +107,7 @@ const ItemPage = () => {
         dispatch({
           type: "SHOW_LOADING",
         });
-        await axios.put("/api/items/edit-item", {
+        await axios.put(`${apiUrl}/items/edit-item`, {
           ...value,
           itemId: editItem._id,
         });

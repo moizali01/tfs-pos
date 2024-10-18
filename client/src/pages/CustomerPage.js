@@ -3,6 +3,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import DefaultLayout from "../components/DefaultLayout";
+
+const apiUrl = process.env.REACT_APP_API_URL;
+
 const CutomerPage = () => {
   const [billsData, setBillsData] = useState([]);
   const dispatch = useDispatch();
@@ -11,7 +14,7 @@ const CutomerPage = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      const { data } = await axios.get("/api/bills/get-bills");
+      const { data } = await axios.get(`${apiUrl}/api/bills/get-bills`);
       setBillsData(data);
       dispatch({ type: "HIDE_LOADING" });
       console.log(data);

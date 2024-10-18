@@ -5,6 +5,9 @@ import { useDispatch } from "react-redux";
 import ItemList from "../components/ItemList";
 import DefaultLayout from "./../components/DefaultLayout";
 
+
+const apiUrl = process.env.REACT_APP_API_URL;
+
 const Homepage = () => {
   const [itemsData, setItemsData] = useState([]);
   const [selecedCategory, setSelecedCategory] = useState("all"); // Default to "all"
@@ -38,7 +41,7 @@ const Homepage = () => {
         dispatch({
           type: "SHOW_LOADING",
         });
-        const { data } = await axios.get("/api/items/get-item");
+        const { data } = await axios.get(`${apiUrl}/api/items/get-item`);
         setItemsData(data);
         dispatch({ type: "HIDE_LOADING" });
         console.log(data);

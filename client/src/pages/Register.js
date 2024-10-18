@@ -5,6 +5,8 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 const Register = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -15,7 +17,7 @@ const Register = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      await axios.post("/api/users/register", values);
+      await axios.post(`${apiUrl}/api/users/register`, values);
       message.success("Registration Successful");
       dispatch({ type: "HIDE_LOADING" });
       navigate("/login");

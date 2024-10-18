@@ -5,6 +5,9 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
+
 const Login = () => {
   const [loading] = useState(false);
   const dispatch = useDispatch();
@@ -15,7 +18,7 @@ const Login = () => {
         dispatch({
           type: "SHOW_LOADING",
         });
-      const { data } = await axios.post("/api/users/login", values);
+      const { data } = await axios.post(`${apiUrl}/api/users/login`, values);
       dispatch({ type: "HIDE_LOADING" });
       message.success("login success");
       localStorage.setItem(

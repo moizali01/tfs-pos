@@ -10,6 +10,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import DefaultLayout from "../components/DefaultLayout";
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 const CartPage = () => {
   const [subTotal, setSubTotal] = useState(0);
   const [billPopup, setBillPopup] = useState(false);
@@ -107,7 +109,7 @@ const CartPage = () => {
         date: new Date().toISOString(), // Add current timestamp
       };
   
-      await axios.post("/api/bills/add-bills", newObject);
+      await axios.post(`${apiUrl}/api/bills/add-bills`, newObject);
       message.success("Bill Generated");
   
       // Dispatch action to clear the cart
