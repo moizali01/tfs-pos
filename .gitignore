@@ -1,0 +1,6 @@
+node_modules/
+.env
+bulkUploader.js
+deleteAllItems.js
+test.csv
+
