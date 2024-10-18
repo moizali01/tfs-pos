@@ -1,6 +1,6 @@
-# POSView
+# TFS POS
 
-POSView is a web application developed using the MERN stack, which comprises MongoDB, Express, React, and Node.js. This application functions as a point of sale (POS) system, enabling users to manage products, customers, and sales efficiently.
+POS Software for TFS, a web application developed using the MERN stack, which comprises MongoDB, Express, React, and Node.js. This application functions as a point of sale (POS) system, enabling users to manage products, customers, and sales efficiently.
 
 ## Installation
 
