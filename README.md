@@ -2,15 +2,21 @@
 
 POS Software for TFS, a web application developed using the MERN stack, which comprises MongoDB, Express, React, and Node.js. This application functions as a point of sale (POS) system, enabling users to manage products, customers, and sales efficiently.
 
+# Deployment
+
+Deployed POS Can be accessed from the link below:
+
+[https://tfs-pos.vercel.app/](https://tfs-pos.vercel.app/)
+
 ## Installation
 
 - Clone the repository from GitHub: 
 
        git clone https://github.com/moizali01/tfs-pos.git
     
-- Navigate to the project directory: 
+- Navigate to the server directory: 
 
-       cd tfs-pos
+       cd tfs-pos/server
     
 - Install the server dependencies: 
 
@@ -18,7 +24,7 @@ POS Software for TFS, a web application developed using the MERN stack, which co
     
 - Change to the client directory: 
 
-       cd client
+       cd ../client
     
 - Install the client dependencies: 
 
@@ -26,9 +32,7 @@ POS Software for TFS, a web application developed using the MERN stack, which co
     
 - Create a `.env` file in the root directory with the following environment variables:
 
-       DB_URL = mongodb+srv://<user>:<pass>@cluster0.aveas.mongodb.net/
-
-       SALT_ROUNDS = 10     
+       DB_URL = mongodb+srv://<user>:<pass>@cluster0.aveas.mongodb.net/ 
 
 - Start the server: 
 
