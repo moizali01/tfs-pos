@@ -17,7 +17,7 @@ const Register = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      await axios.post(`${apiUrl}/api/users/register`, values);
+      await axios.post(`/api/users/register`, values);
       message.success("Registration Successful");
       dispatch({ type: "HIDE_LOADING" });
       navigate("/login");

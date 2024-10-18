@@ -109,7 +109,7 @@ const CartPage = () => {
         date: new Date().toISOString(), // Add current timestamp
       };
   
-      await axios.post(`${apiUrl}/api/bills/add-bills`, newObject);
+      await axios.post(`/api/bills/add-bills`, newObject);
       message.success("Bill Generated");
   
       // Dispatch action to clear the cart

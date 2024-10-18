@@ -22,7 +22,8 @@ const BillsPage = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      const { data } = await axios.get(`${apiUrl}/api/bills/get-bills`);
+      // const { data } = await axios.get(`/api/bills/get-bills`);
+      const {data} = await axios.get(`/api/bills/get-bills`);
 
       // Sort bills by date in descending order
       const sortedData = data.sort((a, b) => new Date(b.date) - new Date(a.date));

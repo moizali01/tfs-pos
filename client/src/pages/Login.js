@@ -18,7 +18,7 @@ const Login = () => {
         dispatch({
           type: "SHOW_LOADING",
         });
-      const { data } = await axios.post(`${apiUrl}/api/users/login`, values);
+      const { data } = await axios.post(`/api/users/login`, values);
       dispatch({ type: "HIDE_LOADING" });
       message.success("login success");
       localStorage.setItem(
